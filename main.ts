@@ -64,6 +64,16 @@ export default class CMTypewriterScrollPlugin extends Plugin {
       name: 'Toggle Zen Mode On/Off',
       callback: () => { this.toggleZen(); }
     });
+
+    // toggle focus mode (both)
+    this.addCommand({
+      id: 'toggle-typewriter-sroll-focus',
+      name: 'Toggle Focus Mode On/Off',
+      callback: () => {
+        this.toggleTypewriterScroll();
+        this.toggleZen();
+      }
+    });
   }
 
   toggleTypewriterScroll = (newValue: boolean = null) => {
